@@ -1,4 +1,5 @@
-local item_cache = require("__castra__.castra-cache")
+if require("migration-state").imported_this_session() or (storage._migrated and storage._migrated["castra"]) then return end
+local item_cache = require("__castra-updated__.castra-cache")
 
 -- Convert enemy entities on "castra" to their castra variant
 -- flamethrower, laser-turret, railgun-turret

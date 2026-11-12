@@ -1,3 +1,4 @@
+if require("migration-state").imported_this_session() or (storage._migrated and storage._migrated["castra"]) then return end
 local surface = game.surfaces["castra"]
 if not surface then return end
 
@@ -26,5 +27,5 @@ for _, surface in pairs(game.surfaces) do
 end
 
 -- Rebuild enemy data
-local item_cache = require("__castra__.castra-cache")
+local item_cache = require("__castra-updated__.castra-cache")
 item_cache.update_castra_enemy_data()

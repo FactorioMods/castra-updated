@@ -22,18 +22,18 @@ data:extend(
     {
       type = "recipe",
       name = "nickel-extraction",
-      category = "smelting",
+      categories = {"smelting"},
       energy_required = 8,
       ingredients = {{type="item", name="millerite", amount=5}},
       results = {
         {type="item", name="nickel-plate", amount=4},
-        {type="item", name="iron-ore", amount=1, probability=0.5},
-        {type="item", name="sulfur", amount=1, probability=0.1}
+        {type="item", name="iron-ore", amount=1, independent_probability =0.5},
+        {type="item", name="sulfur", amount=1, independent_probability =0.1}
       },
       icons =
       {
         {
-          icon = "__castra__/graphics/icons/nickel-plate.png",
+          icon = "__castra-updated__/graphics/icons/nickel-plate.png",
           scale = 0.7,
           shift = {0, -10}
         },
@@ -59,7 +59,7 @@ data:extend(
     {
       type = "recipe",
       name = "hydrogen-sulfide-electrolysis",
-      category = "chemistry-or-cryogenics",
+      categories = {"chemistry", "cryogenics"},
       energy_required = 2,
       ingredients = {{type="fluid", name="hydrogen-sulfide", amount=100}},
       results = {
@@ -69,7 +69,7 @@ data:extend(
       icons =
       {
         {
-          icon = "__castra__/graphics/icons/fluid/hydrogen-sulfide.png",
+          icon = "__castra-updated__/graphics/icons/fluid/hydrogen-sulfide.png",
           scale = 0.7,
           shift = {0, -10}
         },
@@ -109,7 +109,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/nickel-plate.png",
+          icon = "__castra-updated__/graphics/icons/nickel-plate.png",
           scale = 0.5,
           shift = {-10, 10}
         }
@@ -141,7 +141,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/millerite.png",
+          icon = "__castra-updated__/graphics/icons/millerite.png",
           scale = 0.5,
           shift = {-10, 10}
         }
@@ -158,7 +158,7 @@ data:extend(
       type = "recipe",
       name = "hydrogen-sulfide-carbon-extraction",
       enabled = false,
-      category = "chemistry",
+      categories = {"chemistry"},
       energy_required = 10,
       ingredients = {
         {type="fluid", name="hydrogen-sulfide", amount=10},
@@ -177,7 +177,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/fluid/hydrogen-sulfide.png",
+          icon = "__castra-updated__/graphics/icons/fluid/hydrogen-sulfide.png",
           scale = 0.5,
           shift = {-10, 10}
         },
@@ -201,7 +201,7 @@ data:extend(
       type = "recipe",
       name = "explosives-gunpowder",
       enabled = false,
-      category = "chemistry",
+      categories = {"chemistry"},
       energy_required = 3,
       ingredients = {
         {type="item", name="gunpowder", amount=4},
@@ -216,7 +216,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/gunpowder.png",
+          icon = "__castra-updated__/graphics/icons/gunpowder.png",
           scale = 0.5,
           shift = {-10, 10}
         }
@@ -248,7 +248,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/gunpowder.png",
+          icon = "__castra-updated__/graphics/icons/gunpowder.png",
           scale = 0.5,
           shift = {-10, 10}
         }
@@ -281,7 +281,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/gunpowder.png",
+          icon = "__castra-updated__/graphics/icons/gunpowder.png",
           scale = 0.5,
           shift = {-10, 10}
         }
@@ -299,7 +299,7 @@ data:extend(
       type = "recipe",
       name = "plastic-hydrogen-sulfide",
       enabled = false,
-      category = "chemistry",
+      categories = {"chemistry"},
       energy_required = 2,
       ingredients = {
         {type="item", name="carbon", amount=1},
@@ -320,7 +320,7 @@ data:extend(
           shift = {-10, 10}
         },
         {
-          icon = "__castra__/graphics/icons/fluid/hydrogen-sulfide.png",
+          icon = "__castra-updated__/graphics/icons/fluid/hydrogen-sulfide.png",
           scale = 0.5,
           shift = {10, 10}
         }
@@ -338,7 +338,7 @@ data:extend(
       -- Battery using nickel instead of iron
       type = "recipe",
       name = "battery-nickel",
-      category = "chemistry-or-cryogenics",
+      categories = {"chemistry", "cryogenics"},
       enabled = false,
       energy_required = 4,
       ingredients = {
@@ -355,7 +355,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/nickel-plate.png",
+          icon = "__castra-updated__/graphics/icons/nickel-plate.png",
           scale = 0.5,
           shift = {-10, 10}
         }
@@ -372,7 +372,7 @@ data:extend(
     {
       type = "recipe",
       name = "forge",
-      category = "castra-crafting",
+      categories = {"castra-crafting"},
       enabled = false,
       energy_required = 20,
       ingredients = {
@@ -397,7 +397,7 @@ data:extend(
       -- battlefield science pack
       type = "recipe",
       name = "battlefield-science-pack",
-      category = "castra-forge",
+      categories = {"castra-forge"},
       enabled = false,
       energy_required = 24,
       ingredients = {
@@ -421,7 +421,7 @@ data:extend(
     {
       type = "recipe",
       name = "reverse-cracking",
-      category = "oil-processing",
+      categories = {"oil-processing"},
       subgroup = "castra-processes",
       order = "c[reverse-cracking]",
       enabled = false,
@@ -449,7 +449,7 @@ data:extend(
           shift = { 10, -10 }
         },
         {
-          icon = "__castra__/graphics/icons/millerite.png",
+          icon = "__castra-updated__/graphics/icons/millerite.png",
           scale = 0.5,
           shift = { -10, -10 }
         },
@@ -493,7 +493,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/nickel-plate.png",
+          icon = "__castra-updated__/graphics/icons/nickel-plate.png",
           scale = 0.5,
           shift = {-10, 10}
         }
@@ -510,7 +510,7 @@ data:extend(
       -- advanced nickel processing in the foundry
       type = "recipe",
       name = "advanced-nickel-processing",
-      category = "metallurgy",
+      categories = {"metallurgy"},
       subgroup = "castra-processes",
       order = "e[advanced-nickel-processing]",
       enabled = false,
@@ -527,7 +527,7 @@ data:extend(
       icons =
       {
         {
-          icon = "__castra__/graphics/icons/nickel-plate.png",
+          icon = "__castra-updated__/graphics/icons/nickel-plate.png",
           scale = 0.7,
           shift = {0, -10}
         },
@@ -552,7 +552,7 @@ data:extend(
     {
       type = "recipe",
       name = "lithium-battery",
-      category = "cryogenics",
+      categories = {"cryogenics"},
       enabled = false,
       energy_required = 10,
       ingredients = {
@@ -571,13 +571,13 @@ data:extend(
       name = "holmium-catalyzing",
       enabled = false,
       energy_required = 4,
-      category = "metallurgy-or-assembling",
+      categories = {"metallurgy", "crafting-with-fluid"},
       ingredients = {
         {type="fluid", name="holmium-solution", amount=30},
         {type="item", name="millerite", amount=1}
       },
       results = {{type="item", name="holmium-plate", amount=2}},
-      icon = "__castra__/graphics/icons/holmium-catalyzing.png",
+      icon = "__castra-updated__/graphics/icons/holmium-catalyzing.png",
       allow_productivity = true,
       auto_recycle = false,
       hide_from_signal_gui = false,
@@ -602,7 +602,7 @@ data:extend(
     {
       type = "recipe",
       name = "combat-roboport",
-      category = "castra-forge",
+      categories = {"castra-forge"},
       enabled = false,
       energy_required = 10,
       ingredients = {
@@ -631,14 +631,14 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/gunpowder.png",
+          icon = "__castra-updated__/graphics/icons/gunpowder.png",
           scale = 0.5,
           shift = {-10, 10}
         }
       },
       allow_productivity = true,
       auto_recycle = false,
-      category = "basic-crafting",
+      categories = {"crafting"},
       hide_from_signal_gui = false,
       main_product = "",
       allow_decomposition = false,
@@ -666,7 +666,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/nickel-plate.png",
+          icon = "__castra-updated__/graphics/icons/nickel-plate.png",
           scale = 0.5,
           shift = {-10, 10}
         },
@@ -677,7 +677,7 @@ data:extend(
         }
       },
       auto_recycle = false,
-      category = "basic-crafting",
+      categories = {"crafting"},
       hide_from_signal_gui = false,
       main_product = "",
       allow_decomposition = false,
@@ -704,7 +704,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/nickel-plate.png",
+          icon = "__castra-updated__/graphics/icons/nickel-plate.png",
           scale = 0.5,
           shift = {-10, 10}
         },
@@ -715,7 +715,7 @@ data:extend(
         }
       },
       auto_recycle = false,
-      category = "basic-crafting",
+      categories = {"crafting"},
       hide_from_signal_gui = false,
       main_product = "",
       allow_decomposition = false,
@@ -742,13 +742,13 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/castra-data.png",
+          icon = "__castra-updated__/graphics/icons/castra-data.png",
           scale = 0.5,
           shift = {-10, 10}
         }
       },
       auto_recycle = false,
-      category = "basic-crafting",
+      categories = {"crafting"},
       allow_productivity = false,
       hide_from_signal_gui = false,
       main_product = "",
@@ -775,13 +775,13 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/castra-data.png",
+          icon = "__castra-updated__/graphics/icons/castra-data.png",
           scale = 0.5,
           shift = {-10, 10}
         }
       },
       auto_recycle = false,
-      category = "basic-crafting",
+      categories = {"crafting"},
       allow_productivity = false,
       hide_from_signal_gui = false,
       main_product = "",
@@ -808,13 +808,13 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/castra-data.png",
+          icon = "__castra-updated__/graphics/icons/castra-data.png",
           scale = 0.5,
           shift = {-10, 10}
         }
       },
       auto_recycle = false,
-      category = "basic-crafting",
+      categories = {"crafting"},
       allow_productivity = false,
       hide_from_signal_gui = false,
       main_product = "",
@@ -841,13 +841,13 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/castra-data.png",
+          icon = "__castra-updated__/graphics/icons/castra-data.png",
           scale = 0.5,
           shift = {-10, 10}
         }
       },
       auto_recycle = false,
-      category = "electronics-or-assembling",
+      categories = {"electromagnetics", "crafting"},
       allow_productivity = true,
       hide_from_signal_gui = false,
       main_product = "",
@@ -875,13 +875,13 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/castra-data.png",
+          icon = "__castra-updated__/graphics/icons/castra-data.png",
           scale = 0.5,
           shift = {-10, 10}
         }
       },
       auto_recycle = false,
-      category = "electronics-or-assembling",
+      categories = {"electromagnetics", "crafting"},
       allow_productivity = true,
       hide_from_signal_gui = false,
       main_product = "",
@@ -909,13 +909,13 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/castra-data.png",
+          icon = "__castra-updated__/graphics/icons/castra-data.png",
           scale = 0.5,
           shift = {-10, 10}
         }
       },
       auto_recycle = false,
-      category = "electronics-or-assembling",
+      categories = {"electromagnetics", "crafting-with-fluid"},
       allow_productivity = true,
       hide_from_signal_gui = false,
       main_product = "",
@@ -929,7 +929,7 @@ data:extend(
       name = "nickel-sulfide-reduction",
       enabled = false,
       energy_required = 6,
-      category = "chemistry-or-cryogenics",
+      categories = {"chemistry", "cryogenics"},
       ingredients = {
         {type="item", name="copper-plate", amount=4},
         {type="item", name="millerite", amount=1},
@@ -947,7 +947,7 @@ data:extend(
           shift = {0, -10}
         },
         {
-          icon = "__castra__/graphics/icons/millerite.png",
+          icon = "__castra-updated__/graphics/icons/millerite.png",
           scale = 0.5,
           shift = {-10, 10}
         },
@@ -976,7 +976,7 @@ data:extend(
       name = "rocket-fuel-sulfur",
       enabled = false,
       energy_required = 15,
-      category = "chemistry-or-cryogenics",
+      categories = {"chemistry", "cryogenics"},
       ingredients = {
         {type="fluid", name="light-oil", amount=100},
         {type="item", name="sulfur", amount=12}
@@ -1012,7 +1012,7 @@ data:extend(
     {
       type = "recipe",
       name = "military-transport-belt",
-      category = "metallurgy-or-assembling",
+      categories = {"metallurgy", "crafting-with-fluid"},
       surface_conditions =
       {
         {
@@ -1034,7 +1034,7 @@ data:extend(
       type = "recipe",
       name = "military-underground-belt",
       energy_required = 2,
-      category = "metallurgy-or-assembling",
+      categories = {"metallurgy", "crafting-with-fluid"},
       surface_conditions =
       {
         {
@@ -1055,7 +1055,7 @@ data:extend(
     {
       type = "recipe",
       name = "military-splitter",
-      category = "metallurgy-or-assembling",
+      categories = {"metallurgy", "crafting-with-fluid"},
       surface_conditions =
       {
         {
@@ -1085,8 +1085,55 @@ data:extend(
         {type="item", name="nickel-plate", amount=2}
       },
       results = {{type="item", name="carbon-fiber-wall", amount=2}},
-      category = "castra-forge",
+      categories = {"castra-forge"},
       energy_required = 2
+    },
+    {
+      type = "recipe",
+      name = "jammer-radar",
+      enabled = false,
+      energy_required = 5,
+      ingredients = {
+        {type="item", name="radar", amount=1},
+        {type="item", name="processing-unit", amount=5},
+        {type="item", name="supercapacitor", amount=2}
+      },
+      results = {{type="item", name="jammer-radar", amount=1}},
+      categories = {"castra-forge"}
+    },
+    {
+      type = "recipe",
+      name = "jammed-data-collector-process",
+      icon = "__castra-updated__/graphics/icons/castra-data.png",
+      hide_from_player_crafting = true,
+      auto_recycle = false,
+      preserve_products_in_machine_output = true,
+      enabled = false,
+      order = "o[jammed-data-collector-process]",
+      energy_required = 16,
+      ingredients = {},
+      results = {
+        {type="item", name="advanced-circuit", amount=1, independent_probability =0.17},
+        {type="item", name="millerite", amount=1, independent_probability =0.08},
+        {type="item", name="low-density-structure", amount=1, independent_probability =0.12},
+        {type="item", name="electric-engine-unit", amount=1, independent_probability =0.04},
+        {type="item", name="castra-data", amount=1, independent_probability =0.59}
+      },
+      categories = {"jammed-data-collector-process"}
+    },
+    {
+      type = "recipe",
+      name = "jammed-data-collector",
+      enabled = false,
+      energy_required = 30,
+      ingredients = {
+        {type="item", name="jammer-radar", amount=1},
+        {type="item", name="quantum-processor", amount=50},
+        {type="item", name="lithium-battery", amount=200},
+        {type="item", name="castra-data", amount=10}
+      },
+      results = {{type="item", name="jammed-data-collector", amount=1}},
+      categories = {"cryogenics"}
     },
   }
 )

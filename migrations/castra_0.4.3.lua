@@ -1,3 +1,4 @@
+if require("migration-state").imported_this_session() or (storage._migrated and storage._migrated["castra"]) then return end
 -- Rebuild castra data collector dataCollectorsRoboportStatus
 local surface = game.surfaces["castra"]
 if not surface then return end

@@ -147,7 +147,7 @@ if data.raw["technology"]["cargo-landing-pad-capacity"] then
 
     -- Add maraxsis support for cargo-landing-pad-capacity
     -- Landing Pad Rsearch overrides the research, just need to add back prereq and science pack
-    if mods["maraxsis"] and mods["landing-pad-research"] then
+    if mods["maraxsis"] and mods["landing-pad-research-updated"] then
         table.insert(data.raw["technology"]["cargo-landing-pad-capacity"].prerequisites, "maraxsis-project-seadragon")
         if data.raw["technology"]["cargo-landing-pad-capacity"].unit and data.raw["technology"]["cargo-landing-pad-capacity"].unit.ingredients then
             table.insert(data.raw["technology"]["cargo-landing-pad-capacity"].unit.ingredients,

@@ -23,27 +23,26 @@ function create_category_if_not_exists(name)
 end
 
 function change_to_category(item)
-    for _, recipe in pairs(data.raw["recipe"]) do
-        if recipe.results then
-            -- Ignore hidden or recycling recipes
-            if recipe.hidden or (recipe.category and string.find(recipe.category, "recycling")) then
-                goto continueRecipe
-            end
+    if not item then return end
+    for _, recipe in pairs(data.raw.recipe) do
+        local categories = recipe.categories or {"crafting"}
+        local recycling = false
+        for _, category in pairs(categories) do if string.find(category, "recycling") then recycling = true end end
+        if recipe.results and not recipe.hidden and not recycling then
             for _, result in pairs(recipe.results) do
                 if result.name == item.name then
-                    if not recipe.category or recipe.category == "crafting" then
-                        recipe.category = "castra-crafting"
-                        break
-                    else
-                        create_category_if_not_exists("castra-" .. recipe.category)
-                        recipe.category = "castra-" .. recipe.category
-                        break
+                    local changed = {}
+                    for _, category in pairs(categories) do
+                        local target = string.sub(category,1,7) == "castra-" and category or "castra-" .. category
+                        create_category_if_not_exists(target)
+                        changed[#changed+1] = target
                     end
+                    recipe.categories = changed
+                    break
                 end
             end
-            ::continueRecipe::
         end
-    end    
+    end
 end
 
 for _, item in pairs(data.raw["capsule"]) do
@@ -92,7 +91,7 @@ for _, item in pairs(data.raw["item"]) do
     ::continueItem::
 end
 
-change_to_category(data.raw["tool"]["military-science-pack"])
+change_to_category(data.raw["item"]["military-science-pack"])
 
 -- Update the character's crafting categories
 if data.raw.character.character.crafting_categories then

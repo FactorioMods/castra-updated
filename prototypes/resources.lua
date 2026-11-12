@@ -6,7 +6,7 @@ local function resource(resource_parameters, autoplace_parameters)
   {
     type = "resource",
     name = resource_parameters.name,
-    icon = "__castra__/graphics/icons/" .. resource_parameters.name .. ".png",
+    icon = "__castra-updated__/graphics/icons/" .. resource_parameters.name .. ".png",
     flags = {"placeable-neutral"},
     order="a-b-"..resource_parameters.order,
     tree_removal_probability = 0.8,
@@ -47,7 +47,7 @@ local function resource(resource_parameters, autoplace_parameters)
     {
       sheet =
       {
-        filename = "__castra__/graphics/entity/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+        filename = "__castra-updated__/graphics/entity/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
         priority = "extra-high",
         size = 128,
         frame_count = 8,
@@ -81,7 +81,7 @@ data:extend({
   {
     type = "resource",
     name = "hydrogen-sulfide-vent",
-    icon = "__castra__/graphics/icons/hydrogen-sulfide-vent.png",
+    icon = "__castra-updated__/graphics/icons/hydrogen-sulfide-vent.png",
     flags = {"placeable-neutral"},
     category = "basic-fluid",
     subgroup = "mineable-fluids",
@@ -100,7 +100,7 @@ data:extend({
           name = "hydrogen-sulfide",
           amount_min = 1,
           amount_max = 1,
-          probability = 1
+          independent_probability = 1
         }
       }
     },
@@ -125,7 +125,7 @@ data:extend({
     {
       layers =
       {
-        util.sprite_load("__castra__/graphics/entity/hydrogen-sulfide-vent/hydrogen-sulfide-vent",
+        util.sprite_load("__castra-updated__/graphics/entity/hydrogen-sulfide-vent/hydrogen-sulfide-vent",
         {
           priority = "extra-high",
           frame_count = 4,
